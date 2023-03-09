@@ -6,15 +6,15 @@ public class Pokeball : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Pokemon>())
+        if (collision.gameObject.GetComponent<PokemonController>())
         {
-            Pokemon pokemon = collision.gameObject.GetComponent<Pokemon>();
+            PokemonController pokemon = collision.gameObject.GetComponent<PokemonController>();
             if (pokemon.Capture())
             {
-                Debug.Log("Du fangede en " + pokemon.Name);
+                Debug.Log("Du fangede en " + pokemon.pokemon.Name);
                 gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                Destroy(pokemon.gameObject, pokemon.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
-                Destroy(gameObject, pokemon.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+                Destroy(pokemon.gameObject, pokemon.animator.GetCurrentAnimatorStateInfo(0).length);
+                Destroy(gameObject, pokemon.animator.GetCurrentAnimatorStateInfo(0).length);
             }
         }
     }

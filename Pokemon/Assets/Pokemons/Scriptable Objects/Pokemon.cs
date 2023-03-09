@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pokemon : MonoBehaviour
+[CreateAssetMenu(fileName = "New Pokemon", menuName = "Pokemon")]
+public class Pokemon : ScriptableObject
 {
     public enum PokemonType
     {
@@ -14,7 +15,7 @@ public class Pokemon : MonoBehaviour
         Rock,
         Ground,
         Steel,
-        Bug,
+        Bug, 
         Poison,
         Flying,
         Fighting,
@@ -29,20 +30,8 @@ public class Pokemon : MonoBehaviour
     public List<PokemonType> Type;
     public int Level;
     public string[] Attacks;
-    public int Health;
+    public float Health;
 
-    public Animator Animator;
-
-    public bool Capture()
-    {
-        if (Random.Range(1, 3) == 1)
-        {
-            Animator.SetTrigger("InCapture");
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    public Sprite img;
+    public Mesh mesh;
 }
