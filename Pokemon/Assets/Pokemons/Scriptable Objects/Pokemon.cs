@@ -32,6 +32,10 @@ public class Pokemon : ScriptableObject
     public string[] Attacks;
     public float Health;
 
-    public Sprite img;
+    public bool DoesEvovle;
+    public Pokemon EvolveTo;
+    public int EvolveLevel;
+
+    public Texture img;
     public Mesh mesh;
 }

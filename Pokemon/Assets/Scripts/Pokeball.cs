@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Pokeball : MonoBehaviour
 {
+    public Animator Animator;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<PokemonController>())
         {
             PokemonController pokemon = collision.gameObject.GetComponent<PokemonController>();
-            if (pokemon.Capture())
+            if (pokemon.Capture(transform))
             {
-                Debug.Log("Du fangede en " + pokemon.pokemon.Name);
+                Animator.SetTrigger("Capture");
+                transform.LookAt(collision.transform);
                 gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                Player.instance.pokemons.Add(pokemon.pokemon);
                 Destroy(pokemon.gameObject, pokemon.animator.GetCurrentAnimatorStateInfo(0).length);
                 Destroy(gameObject, pokemon.animator.GetCurrentAnimatorStateInfo(0).length);
             }
