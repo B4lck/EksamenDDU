@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public List<Pokemon> Pokemons;
+    public static Player instance;
+
+    public List<Pokemon> pokemons = new List<Pokemon>();
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Debug.LogError("Too many player scripts");
+    }
 
 }

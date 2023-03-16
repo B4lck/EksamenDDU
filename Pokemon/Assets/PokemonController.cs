@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PokemonController : MonoBehaviour
 {
@@ -92,12 +93,20 @@ public class PokemonController : MonoBehaviour
 
     public Pokemon pokemon;
     public Animator animator;
+    private bool InCapture = false;
+    private Vector3 PokeballPos;
 
-    public bool Capture()
+    public bool PositionLocked = false;
+    public NavMeshAgent agent;
+    public Vector3 TargetPosition;
+
+    public bool Capture(Transform pokeball)
     {
         if (Random.Range(1, 3) != 123) // Skal laves om til 50/50
         {
             animator.SetTrigger("InCapture");
+            InCapture = true;
+            PokeballPos = pokeball.position;
             return true;
         }
         else
@@ -141,5 +150,24 @@ public class PokemonController : MonoBehaviour
     public void TakeDamage(float Damage, Pokemon.PokemonType DamageType)
     {
         pokemon.Health -= Mitigate(Damage, DamageType);
+    }
+    //Ai Stuff
+    public void FindNewPosition(Vector3 newPos)
+    {
+        if (newPos != transform.position && PositionLocked)
+        {
+            return;
+        }
+        TargetPosition = newPos;
+    }
+
+    private void Update()
+    {
+        agent.isStopped = PositionLocked;
+        if (transform.position == TargetPosition)
+        {
+            FindNewPosition(new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y, Random.Range(transform.position.z - 2, transform.position.z + 2)));
+        }
+        agent.SetDestination(TargetPosition);
     }
 }

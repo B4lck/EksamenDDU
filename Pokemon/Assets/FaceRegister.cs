@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FaceRegister : MonoBehaviour
 {
-    public string Tag;
+    public string TargetTag;
     public Animator Animator;
 
     private void Update()
@@ -12,7 +12,7 @@ public class FaceRegister : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.up, out hit, 100f))
         {
-            if (hit.transform.CompareTag(Tag))
+            if (hit.transform.CompareTag(TargetTag))
             {
                 Animator.SetTrigger("OpenUI");
             } else
@@ -24,6 +24,11 @@ public class FaceRegister : MonoBehaviour
         {
             Animator.SetTrigger("CloseUI");
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, (transform.up * 4) + transform.position);
     }
 
 }
