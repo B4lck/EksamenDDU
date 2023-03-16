@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 758b739ed1abc054584bbd106b2bcb9e, type: 3}
-  m_Name: Balckefar
+  m_Name: Tsauchic
   m_EditorClassIdentifier: 
-  Name: Balckefar
-  Type: 0a000000010000000f00000005000000070000001000000010000000
-  Level: 14
-  Attacks:
-  - Scratch
-  - Ember
-  - Growl
+  Name: 
+  Type: 
+  Level: 0
+  Attacks: []
   Health: 0
+  DoesEvovle: 0
+  EvolveTo: {fileID: 0}
+  EvolveLevel: 0
   img: {fileID: 0}
   mesh: {fileID: 0}

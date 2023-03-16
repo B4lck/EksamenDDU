@@ -25,6 +25,7 @@ public class PokemonController : MonoBehaviour
     static Pokemon.PokemonType Fairy = Pokemon.PokemonType.Fairy;
 
 
+
     static Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>> TypeWeaknesses = new Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>>()
     {
         {Normal, new List<Pokemon.PokemonType>() { Rock, Steel} },
@@ -164,7 +165,7 @@ public class PokemonController : MonoBehaviour
     private void Update()
     {
         agent.isStopped = PositionLocked;
-        if (transform.position == TargetPosition)
+        if (transform.position ==  new Vector3(TargetPosition.x, transform.position.y, TargetPosition.z) || agent.velocity == Vector3.zero)
         {
             FindNewPosition(new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y, Random.Range(transform.position.z - 2, transform.position.z + 2)));
         }

@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7938420216061041248}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &7611178331398238669
 SphereCollider:
@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5698c7fc9f48d864a8aae14997f5eb3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 8185892560239898896}
 --- !u!54 &7611178331398238659
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,7 +130,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7611178331398238658}
+        m_TargetAssemblyTypeName: Pokeball, Assembly-CSharp
+        m_MethodName: FixRigidbody
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -290,6 +303,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6935687079284805244, guid: 9f8489a938d31c647ada3ba365c32036,
+        type: 3}
+      propertyPath: m_Name
+      value: Midten
+      objectReference: {fileID: 0}
+    - target: {fileID: -4845419198383733991, guid: 9f8489a938d31c647ada3ba365c32036,
+        type: 3}
+      propertyPath: m_Name
+      value: Detalje
+      objectReference: {fileID: 0}
+    - target: {fileID: -3372522033569347474, guid: 9f8489a938d31c647ada3ba365c32036,
+        type: 3}
+      propertyPath: m_Name
+      value: Bund
+      objectReference: {fileID: 0}
+    - target: {fileID: -1817752537321972114, guid: 9f8489a938d31c647ada3ba365c32036,
+        type: 3}
+      propertyPath: m_Name
+      value: Top
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9f8489a938d31c647ada3ba365c32036,
         type: 3}
       propertyPath: m_Name
@@ -298,6 +331,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f8489a938d31c647ada3ba365c32036, type: 3}
+--- !u!1 &7305189941546926298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9f8489a938d31c647ada3ba365c32036,
+    type: 3}
+  m_PrefabInstance: {fileID: 7611178331960278411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8185892560239898896
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7305189941546926298}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2802a4467d5a6d7429ab56d1da0f7da0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &7938420216061041248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9f8489a938d31c647ada3ba365c32036,
