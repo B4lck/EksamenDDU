@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758b739ed1abc054584bbd106b2bcb9e, type: 3}
   m_Name: Tsauchic
   m_EditorClassIdentifier: 
-  Name: 
-  Type: 
-  Level: 0
+  Name: Tsauchic
+  Type: 110000000c000000
+  Level: 1
   Attacks: []
-  Health: 0
+  Health: 40
   DoesEvovle: 0
   EvolveTo: {fileID: 0}
   EvolveLevel: 0
-  img: {fileID: 0}
+  img: {fileID: 2800000, guid: fbb6b4be5ae0fca469c2118dce7ed7f6, type: 3}
   mesh: {fileID: 0}
