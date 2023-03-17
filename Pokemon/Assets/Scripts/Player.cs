@@ -25,7 +25,8 @@ public class Player : MonoBehaviour
 
     public void Start()
     {
-        player.AddPokemon(StartPokemon);
+        for (int i = 0; i < 7; i++)
+            player.AddPokemon(StartPokemon);
     }
 
 }
