@@ -26,9 +26,4 @@ public class FaceRegister : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, (transform.up * 4) + transform.position);
-    }
-
 }
