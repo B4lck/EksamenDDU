@@ -10,12 +10,10 @@ public class Player : MonoBehaviour
 
     public Pokemon StartPokemon;
 
-    private void Awake()
+    private void Awake() // Lav en singleton
     {
         if (player == null)
             player = this;
-        else
-            Debug.LogError("Too many player scripts");
     }
 
     public void AddPokemon(Pokemon pokemon)
@@ -23,10 +21,16 @@ public class Player : MonoBehaviour
         pokemons.Add(pokemon);
     }
 
+    public void RemovePokemon(Pokemon pokemon)
+    {
+        if (pokemons.Contains(pokemon))
+            pokemons.Remove(pokemon);
+        else
+            Debug.Log("Player does not have pokemon");
+    }
     public void Start()
     {
-        for (int i = 0; i < 7; i++)
-            player.AddPokemon(StartPokemon);
+        pokemons.Add(StartPokemon);
     }
 
 }

@@ -32,6 +32,7 @@ public class Pokeball : MonoBehaviour
     public void FixRigidbody()
     {
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        gameObject.GetComponent<XRGrabInteractable>().enabled = false;
         Destroy(gameObject, 5f);
     }
 }

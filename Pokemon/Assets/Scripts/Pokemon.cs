@@ -28,9 +28,6 @@ public class Pokemon : ScriptableObject
     }
     public string Name;
     public List<PokemonType> Type;
-    public int Level;
-    public string[] Attacks;
-    public float Health;
 
     public bool DoesEvovle;
     public Pokemon EvolveTo;

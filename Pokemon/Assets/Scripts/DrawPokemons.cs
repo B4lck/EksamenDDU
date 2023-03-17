@@ -21,9 +21,11 @@ public class DrawPokemons : MonoBehaviour
 
             Pokemon pokemon = Pages[PageId][i];
                         
-            if (pokemon != null)
+            if (pokemon != null) // Hvis pokemonen findes
+                // Sæt texturen til pokemonens billede
                 Images[i].texture = pokemon.img;
             else
+                // Ellers giv ingen texture
                 Images[i].texture = null;
         }
     }
@@ -31,13 +33,15 @@ public class DrawPokemons : MonoBehaviour
 
     void GetPlayerPokemonsAndSetPages()
     {
+        //  Slet alle pokemons og gå igennem igen.
         Pages.Clear();
         int i = 0;
-        foreach (Pokemon pokemon in Player.player.pokemons)
+        foreach (Pokemon pokemon in Player.player.pokemons) // Gå igennem alle spillerens pokemons
         {
+            //Tjek om der er flere sider
             if ((int)Mathf.Floor(i / 6) >= Pages.Count)
-                Pages.Add(new Pokemon[6]);
-            Pages[(int)Mathf.Floor(i / 6)][i % 6] = pokemon;
+                Pages.Add(new Pokemon[6]); // Hvis der ikke er det, så lav en ny
+            Pages[(int)Mathf.Floor(i / 6)][i % 6] = pokemon; // Tilføj pokemon til side
             i++;
         }
     }
