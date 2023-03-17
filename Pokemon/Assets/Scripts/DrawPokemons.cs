@@ -9,21 +9,22 @@ public class DrawPokemons : MonoBehaviour
     public List<Pokemon[]> Pages = new List<Pokemon[]>();
     [SerializeField]
     public RawImage[] Images = new RawImage[6];
-    
 
+
+    public int PageId = 0;
 
     public void DisplayPage(int PageId)
     {
         for (int i = 0; i < Images.Length; i++)
         {
-            if (Pages.Count == 0) { continue; }
-            if (Pages[PageId].Length < i)
-            {
-                Images[i].texture = null;
-                continue;
-            }
+            if (Pages.Count == 0) break;
+
             Pokemon pokemon = Pages[PageId][i];
-            Images[i].texture = pokemon.img;
+                        
+            if (pokemon != null)
+                Images[i].texture = pokemon.img;
+            else
+                Images[i].texture = null;
         }
     }
 
@@ -31,21 +32,19 @@ public class DrawPokemons : MonoBehaviour
     void GetPlayerPokemonsAndSetPages()
     {
         Pages.Clear();
-        int count = 0;
+        int i = 0;
         foreach (Pokemon pokemon in Player.player.pokemons)
         {
-            count++;
-            if ((int)Mathf.Floor(count / 6) <= Pages.Count)
-            {
+            if ((int)Mathf.Floor(i / 6) >= Pages.Count)
                 Pages.Add(new Pokemon[6]);
-            }
-            Pages[(int)Mathf.Floor(count / 6)][count % 6] = pokemon;
+            Pages[(int)Mathf.Floor(i / 6)][i % 6] = pokemon;
+            i++;
         }
     }
 
     private void Update()
     {
         GetPlayerPokemonsAndSetPages();
-        DisplayPage(0);
+        DisplayPage(PageId);
     }
 }
