@@ -20,7 +20,7 @@ public class Pokeball : MonoBehaviour
                 pokemon.PositionLocked = true;
 
                 //Gem pokemon
-                Player.player.AddPokemon(pokemon.pokemon);
+                Player.player.AddPokemon(pokemon);
 
                 //Slet efter animationen
                 Destroy(pokemon.gameObject, pokemon.animator.GetCurrentAnimatorStateInfo(0).length);
