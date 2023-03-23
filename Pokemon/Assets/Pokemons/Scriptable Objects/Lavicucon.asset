@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758b739ed1abc054584bbd106b2bcb9e, type: 3}
+  m_Name: Lavicucon
+  m_EditorClassIdentifier: 
+  Name: Lavicucon
+  Type: 08000000
+  DoesEvovle: 1
+  EvolveTo: {fileID: 11400000, guid: 2ab2d5e59be151b4fae26d20599c8558, type: 2}
+  EvolveLevel: 14
+  img: {fileID: 0}
+  mesh: {fileID: 0}

@@ -14,11 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Tsauchic
   Type: 110000000c000000
-  Level: 1
-  Attacks: []
-  Health: 40
   DoesEvovle: 0
   EvolveTo: {fileID: 0}
   EvolveLevel: 0
   img: {fileID: 2800000, guid: fbb6b4be5ae0fca469c2118dce7ed7f6, type: 3}
-  mesh: {fileID: 0}
+  mesh: {fileID: 2739935881551499125, guid: d7f30e384d91c174681f9bb1c4a0b728, type: 3}

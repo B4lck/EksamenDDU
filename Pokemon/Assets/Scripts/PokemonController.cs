@@ -101,6 +101,20 @@ public class PokemonController : MonoBehaviour
     public NavMeshAgent agent;
     public Vector3 TargetPosition;
 
+    public float Health;
+    public int Level;
+    public List<string> Attacks;
+
+    public MeshFilter RenderedMesh;
+    private GameObject MeshObject;
+
+    private void Awake()
+    {
+        if (pokemon == null) Destroy(gameObject);
+        MeshObject = RenderedMesh.gameObject;
+        RenderedMesh.mesh = pokemon.mesh;
+    }
+
     public bool Capture(Transform pokeball)
     {
         if (Random.Range(1, 3) != 123) // Skal laves om til 50/50
@@ -150,7 +164,7 @@ public class PokemonController : MonoBehaviour
 
     public void TakeDamage(float Damage, Pokemon.PokemonType DamageType)
     {
-        pokemon.Health -= Mitigate(Damage, DamageType);
+        Health -= Mitigate(Damage, DamageType);
     }
     //Ai Stuff
     public void FindNewPosition(Vector3 newPos)
@@ -170,5 +184,25 @@ public class PokemonController : MonoBehaviour
             FindNewPosition(new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y, Random.Range(transform.position.z - 2, transform.position.z + 2)));
         }
         agent.SetDestination(TargetPosition);
+
+        if (Input.anyKeyDown)
+        {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp()
+    {
+        Level++;
+        if (!pokemon.DoesEvovle) return;
+        Debug.Log("Checking for evolve");
+        if (Level >= pokemon.EvolveLevel) Evolve();
+    }
+
+    public void Evolve()
+    {
+        Debug.Log("Evolving");
+        pokemon = pokemon.EvolveTo;
+        RenderedMesh.mesh = pokemon.mesh;
     }
 }
