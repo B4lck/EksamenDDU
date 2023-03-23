@@ -6,9 +6,8 @@ public class Player : MonoBehaviour
 {
     public static Player player;
 
-    public List<Pokemon> pokemons = new List<Pokemon>();
+    public List<PokemonController> pokemons = new List<PokemonController>();
 
-    public Pokemon StartPokemon;
 
     private void Awake() // Lav en singleton
     {
@@ -16,21 +15,17 @@ public class Player : MonoBehaviour
             player = this;
     }
 
-    public void AddPokemon(Pokemon pokemon)
+    public void AddPokemon(PokemonController pokemon)
     {
         pokemons.Add(pokemon);
     }
 
-    public void RemovePokemon(Pokemon pokemon)
+    public void RemovePokemon(PokemonController pokemon)
     {
         if (pokemons.Contains(pokemon))
             pokemons.Remove(pokemon);
         else
             Debug.Log("Player does not have pokemon");
-    }
-    public void Start()
-    {
-        pokemons.Add(StartPokemon);
     }
 
 }

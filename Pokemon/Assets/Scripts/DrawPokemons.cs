@@ -36,12 +36,12 @@ public class DrawPokemons : MonoBehaviour
         //  Slet alle pokemons og gå igennem igen.
         Pages.Clear();
         int i = 0;
-        foreach (Pokemon pokemon in Player.player.pokemons) // Gå igennem alle spillerens pokemons
+        foreach (PokemonController pokemon in Player.player.pokemons) // Gå igennem alle spillerens pokemons
         {
             //Tjek om der er flere sider
             if ((int)Mathf.Floor(i / 6) >= Pages.Count)
                 Pages.Add(new Pokemon[6]); // Hvis der ikke er det, så lav en ny
-            Pages[(int)Mathf.Floor(i / 6)][i % 6] = pokemon; // Tilføj pokemon til side
+            Pages[(int)Mathf.Floor(i / 6)][i % 6] = pokemon.pokemon; // Tilføj pokemon til side
             i++;
         }
     }
