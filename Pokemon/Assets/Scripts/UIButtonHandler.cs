@@ -20,6 +20,14 @@ public class UIButtonHandler : MonoBehaviour
         InstPokeball.GetComponent<Rigidbody>().isKinematic = true;
     }
 
+    public void SummonPokeballWithContent(int ButtonId)
+    {
+        GameObject InstPokeball = Instantiate(Pokeball);
+        InstPokeball.GetComponent<Pokeball>().Contains = PokemonPageHandler.GetPokemonFromPageAndPlace(ButtonId);
+        InstPokeball.transform.position = LeftHand.position + Offset;
+        InstPokeball.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
     public void SwitchPage(string Name)
     {
         foreach (GameObject menu in Menus)
@@ -39,6 +47,7 @@ public class UIButtonHandler : MonoBehaviour
         if (Change + PokemonPageHandler.PageId > PokemonPageHandler.Pages.Count || Change + PokemonPageHandler.PageId < 0)
             Change = 0;    // Hvis man gør så sæt side skiftet til 0
         PokemonPageHandler.PageId += Change;
+        PokemonPageHandler.PageId = Mathf.Clamp(PokemonPageHandler.PageId, 0, PokemonPageHandler.Pages.Count -1);
         ReadPages(); // Tegn sidetal
     }
 
