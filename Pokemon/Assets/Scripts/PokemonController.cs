@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PokemonController : MonoBehaviour
 {
+    //Variabler for at gøre det nemmere at skrive
     static Pokemon.PokemonType Normal = Pokemon.PokemonType.Normal;
     static Pokemon.PokemonType Fire = Pokemon.PokemonType.Fire;
     static Pokemon.PokemonType Water = Pokemon.PokemonType.Water;
@@ -25,7 +26,7 @@ public class PokemonController : MonoBehaviour
     static Pokemon.PokemonType Fairy = Pokemon.PokemonType.Fairy;
 
 
-
+    //Dictionary for hvilke attacks der gør mindre skade
     static Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>> TypeWeaknesses = new Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>>()
     {
         {Normal, new List<Pokemon.PokemonType>() { Rock, Steel} },
@@ -48,6 +49,7 @@ public class PokemonController : MonoBehaviour
         {Fairy, new List<Pokemon.PokemonType>() { Fire, Poison, Steel} },
     };
 
+    //Dictionary for hvilke attacks der gør bonus skade
     static Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>> TypeAmplifier = new Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>>()
     {
         {Normal, new List<Pokemon.PokemonType>() { } },
@@ -70,6 +72,7 @@ public class PokemonController : MonoBehaviour
         {Fairy, new List<Pokemon.PokemonType>() { Fighting, Dragon, Dark} },
     };
 
+    // Dictionary for hvilke attacks der gør intet skade
     static Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>> TypeZero = new Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>>()
     {
         {Normal, new List<Pokemon.PokemonType>() { Ghost } },
@@ -92,19 +95,23 @@ public class PokemonController : MonoBehaviour
         {Fairy, new List<Pokemon.PokemonType>() { } },
     };
 
+    // Base Variabler
     public Pokemon pokemon;
     public Animator animator;
-    private bool InCapture = false;
-    private Vector3 PokeballPos;
-
+    
+    // Ai stuff
     public bool PositionLocked = false;
     public NavMeshAgent agent;
     public Vector3 TargetPosition;
 
+    // Pokemon stats
     public float Health;
+    public float MaxHealth;
     public int Level;
-    public List<string> Attacks;
+    public List<Attack> Attacks;
+    public List<Attack> AllAttacks;
 
+    // Renderer stuff
     public MeshFilter RenderedMesh;
     private GameObject MeshObject;
 
@@ -113,6 +120,32 @@ public class PokemonController : MonoBehaviour
         if (pokemon == null) Destroy(gameObject);
         MeshObject = RenderedMesh.gameObject;
         RenderedMesh.mesh = pokemon.mesh;
+
+        if (Attacks.Count == 0)
+        {
+            // Tilføj attacks som matcher type
+            foreach (Attack attack in AllAttacks)
+            {
+                if (isType(attack.AttackType))
+                {
+                    Attacks.Add(attack);
+                }
+            }
+        }
+
+        //Vælg et tilfældigt lvl når pokemonen spawner og giv liv baseret på lvl.
+        Level = (int)Random.Range(1f, 14f);
+        MaxHealth = 5 + (Level * 0.2f * 20);
+        Health = MaxHealth;
+    }
+
+    bool isType(Pokemon.PokemonType type)
+    {
+        if (pokemon.Type.Contains(type))
+        {
+            return true;
+        }
+        return false;
     }
 
     public bool Capture(Transform pokeball)
@@ -120,8 +153,6 @@ public class PokemonController : MonoBehaviour
         if (Random.Range(1, 3) != 123) // Skal laves om til 50/50
         {
             animator.SetTrigger("InCapture");
-            InCapture = true;
-            PokeballPos = pokeball.position;
             return true;
         }
         else
@@ -140,24 +171,18 @@ public class PokemonController : MonoBehaviour
         float MitigatedDamage = Damage;
         foreach (Pokemon.PokemonType _type in TypeWeaknesses[type])
         {
-            if (Contains(pokemon.Type, _type))
-            {
+            if (pokemon.Type.Contains(_type))
                 MitigatedDamage /= 2;
-            }
         }
         foreach (Pokemon.PokemonType _type in TypeAmplifier[type])
         {
-            if (Contains(pokemon.Type, _type))
-            {
+            if (pokemon.Type.Contains(_type))
                 MitigatedDamage *= 2;
-            }
         } 
         foreach (Pokemon.PokemonType _type in TypeZero[type])
         {
-            if (Contains(pokemon.Type, _type))
-            {
+            if (pokemon.Type.Contains(_type))
                 MitigatedDamage = 0;
-            }
         }
         return MitigatedDamage;
     }
@@ -204,5 +229,12 @@ public class PokemonController : MonoBehaviour
         Debug.Log("Evolving");
         pokemon = pokemon.EvolveTo;
         RenderedMesh.mesh = pokemon.mesh;
+    }
+
+    public void Hit(Attack attack,PokemonController pokemon)
+    {
+        // Gør skade afhængigt af pokemons level
+        // Gør 10% ekstra skade pr level, dvs på level 10 gør så 100% ekstra skade osv.
+        pokemon.TakeDamage(attack.Damage + (attack.Damage * (Level * 0.1f)), attack.AttackType);
     }
 }

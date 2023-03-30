@@ -6,7 +6,12 @@ public class Player : MonoBehaviour
 {
     public static Player player;
 
-    public List<PokemonController> pokemons = new List<PokemonController>();
+    public List<GameObject> pokemons = new List<GameObject>();
+
+    public PokemonController GetControllerFromPokemon(GameObject pokemon)
+    {
+        return pokemons[pokemons.IndexOf(pokemon)].GetComponent<PokemonController>();
+    }
 
 
     private void Awake() // Lav en singleton
@@ -15,12 +20,12 @@ public class Player : MonoBehaviour
             player = this;
     }
 
-    public void AddPokemon(PokemonController pokemon)
+    public void AddPokemon(GameObject pokemon)
     {
         pokemons.Add(pokemon);
     }
 
-    public void RemovePokemon(PokemonController pokemon)
+    public void RemovePokemon(GameObject pokemon)
     {
         if (pokemons.Contains(pokemon))
             pokemons.Remove(pokemon);
