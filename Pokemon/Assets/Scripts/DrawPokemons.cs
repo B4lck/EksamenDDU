@@ -21,7 +21,6 @@ public class DrawPokemons : MonoBehaviour
         foreach (PokemonController pokemon in Pages[PageId])
         {
             if (pokemon == null) {
-                Debug.Log(pokemon);
                 continue;
             }
             Images[j].gameObject.SetActive(true);

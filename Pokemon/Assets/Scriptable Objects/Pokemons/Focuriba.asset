@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 758b739ed1abc054584bbd106b2bcb9e, type: 3}
-  m_Name: Multium
+  m_Name: Focuriba
   m_EditorClassIdentifier: 
-  Name: Multium
-  Type: 04000000
-  DoesEvovle: 0
-  EvolveTo: {fileID: 0}
+  Name: Focuriba
+  Type: 0200000001000000
+  DoesEvovle: 1
+  EvolveTo: {fileID: 11400000, guid: ad205799e2843874ebe4700bbdcdb138, type: 2}
   EvolveLevel: 0
-  img: {fileID: 2800000, guid: 594ae19e794726d47a128ea93e5bfcb9, type: 3}
-  mesh: {fileID: -5053925668127403250, guid: f1cd559ebcfabbd41998d3d2a4520eb3, type: 3}
+  img: {fileID: 2800000, guid: 13f8a0560f8c97d45b4cc485920b1ab3, type: 3}
+  mesh: {fileID: -3632888229392555716, guid: 4ecf014c6280f2b47ab6af0bc33309d3, type: 3}

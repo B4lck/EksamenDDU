@@ -30,6 +30,7 @@ public class Pokeball : MonoBehaviour
                 }
             } else
             {
+                Debug.Log(Contains);
                 BattleHandler.battleHandler.StartBattle(pokemon, Contains);
             }
         }

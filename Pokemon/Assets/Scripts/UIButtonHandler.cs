@@ -24,6 +24,7 @@ public class UIButtonHandler : MonoBehaviour
     {
         GameObject InstPokeball = Instantiate(Pokeball);
         InstPokeball.GetComponent<Pokeball>().Contains = PokemonPageHandler.GetPokemonFromPageAndPlace(ButtonId);
+        //Debug.Log(PokemonPageHandler.GetPokemonFromPageAndPlace(ButtonId).pokemon);
         InstPokeball.transform.position = LeftHand.position + Offset;
         InstPokeball.GetComponent<Rigidbody>().isKinematic = true;
     }

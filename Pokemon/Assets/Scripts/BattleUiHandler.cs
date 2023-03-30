@@ -22,12 +22,15 @@ public class BattleUiHandler : MonoBehaviour
     public TextMeshProUGUI AiPokemonHealth;
     public Slider AiPokemonHealthbar;
 
+    public GameObject Panel;
+
+
 
     private void Update()
     {
-        
         if (PlayerPokemon != null && AiPokemon != null)
         {
+            Panel.SetActive(true);
             //Opdater Stats
             for (int i = 0; i < Attacks.Length; i++)
             {
@@ -40,11 +43,15 @@ public class BattleUiHandler : MonoBehaviour
 
             // Sæt positionen for UI
             transform.position = AiPokemon.transform.position + (Vector3.up * 2);
-            transform.LookAt(Player.player.transform);
+            transform.LookAt(Player.player.Camera);
 
             // Vis attack knapperne
             for (int i = 0; i < Attacks.Length; i++)
             {
+                //Hvis det ikke er spillerens tur, fjern knapperne
+                if (!BattleHandler.battleHandler.IsPlayerTurn) continue;
+                
+                //Vis Knapperne
                 Attack attack = Attacks[i];
                 if (attack == null)
                 {
@@ -66,7 +73,7 @@ public class BattleUiHandler : MonoBehaviour
             AiPokemonHealthbar.value = AiPokemon.Health / AiPokemon.MaxHealth;
         } else
         {
-            gameObject.SetActive(false);
+            Panel.SetActive(false);
         }
     }
 
@@ -79,8 +86,11 @@ public class BattleUiHandler : MonoBehaviour
         if (AiPokemon.Health <= 0)
         {
             BattleHandler.battleHandler.EndBattle();
+            Destroy(AiPokemon.gameObject);
             //Opdater UI mht hvem vandt osv
         }
+
+        BattleHandler.battleHandler.IsPlayerTurn = false;
     }
 
     public void Flee()

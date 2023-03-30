@@ -17,5 +17,5 @@ MonoBehaviour:
   DoesEvovle: 1
   EvolveTo: {fileID: 11400000, guid: 2ab2d5e59be151b4fae26d20599c8558, type: 2}
   EvolveLevel: 14
-  img: {fileID: 0}
-  mesh: {fileID: 0}
+  img: {fileID: 2800000, guid: b8f087ee4f72db44087e16a78da8de6e, type: 3}
+  mesh: {fileID: -235735397261334440, guid: 0eaa4dee27904aa449f251b9004520d2, type: 3}

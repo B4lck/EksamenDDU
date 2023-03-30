@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public static Player player;
 
     public List<GameObject> pokemons = new List<GameObject>();
+    public Transform Camera;
 
     public PokemonController GetControllerFromPokemon(GameObject pokemon)
     {
