@@ -65,7 +65,7 @@ Transform:
   m_Children:
   - {fileID: 3965105502222948038}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!136 &3965105503016794664
 CapsuleCollider:
@@ -99,6 +99,7 @@ MonoBehaviour:
   agent: {fileID: 3965105503016794666}
   TargetPosition: {x: 0, y: 0.05267382, z: 0}
   Health: 0
+  MaxHealth: 0
   Level: 0
   Attacks: []
   AllAttacks:
@@ -120,7 +121,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7a5f03921032bc744bde8d93a009b5dc, type: 2}
   - {fileID: 11400000, guid: d3fd1f157dde9274ea0ccc41cfe27693, type: 2}
   - {fileID: 11400000, guid: cae5182b61594b244b0fdf63bcae604b, type: 2}
-  RenderedMesh: {fileID: 514396183299490215}
+  meshFilter: {fileID: 514396183299490215}
+  meshRenderer: {fileID: 2361988280275367277}
 --- !u!195 &3965105503016794666
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -238,6 +240,12 @@ PrefabInstance:
 --- !u!33 &514396183299490215 stripped
 MeshFilter:
   m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: c1d27b911b7d36d42899bf0e3e93c4a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3965105502472399337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2361988280275367277 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: c1d27b911b7d36d42899bf0e3e93c4a8,
     type: 3}
   m_PrefabInstance: {fileID: 3965105502472399337}
   m_PrefabAsset: {fileID: 0}
