@@ -482,6 +482,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3965105503016794667, guid: d506772033deda04fa7b001a7fdc0304,
         type: 3}
+      propertyPath: pokemon
+      value: 
+      objectReference: {fileID: 11400000, guid: f03fa4a9d7c21504d8f29b933c988222,
+        type: 2}
+    - target: {fileID: 3965105503016794667, guid: d506772033deda04fa7b001a7fdc0304,
+        type: 3}
+      propertyPath: meshFilter
+      value: 
+      objectReference: {fileID: 1649321773}
+    - target: {fileID: 3965105503016794667, guid: d506772033deda04fa7b001a7fdc0304,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 1649321774}
+    - target: {fileID: 3965105503016794667, guid: d506772033deda04fa7b001a7fdc0304,
+        type: 3}
       propertyPath: PositionLocked
       value: 1
       objectReference: {fileID: 0}
@@ -2022,7 +2038,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pokemon
       value: 
-      objectReference: {fileID: 11400000, guid: 75fb4e68d8388a94a9ca3e96f8ee7e5c,
+      objectReference: {fileID: 11400000, guid: c7a89e20892e79e49b9edb71aa32d16c,
         type: 2}
     - target: {fileID: 3965105503016794667, guid: d506772033deda04fa7b001a7fdc0304,
         type: 3}
@@ -4482,6 +4498,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3965105503016794667, guid: d506772033deda04fa7b001a7fdc0304,
         type: 3}
+      propertyPath: pokemon
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ed6c1859a9614945aff4359e0ba1ed9,
+        type: 2}
+    - target: {fileID: 3965105503016794667, guid: d506772033deda04fa7b001a7fdc0304,
+        type: 3}
       propertyPath: PositionLocked
       value: 1
       objectReference: {fileID: 0}
@@ -5113,6 +5135,11 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2361988280275367277, guid: d506772033deda04fa7b001a7fdc0304,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3965105503016794665, guid: d506772033deda04fa7b001a7fdc0304,
         type: 3}
       propertyPath: m_RootOrder
@@ -5172,7 +5199,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pokemon
       value: 
-      objectReference: {fileID: 11400000, guid: d7f3485815f01e546abe9380dcc7e957,
+      objectReference: {fileID: 11400000, guid: 5ed6c1859a9614945aff4359e0ba1ed9,
         type: 2}
     - target: {fileID: 3965105503016794667, guid: d506772033deda04fa7b001a7fdc0304,
         type: 3}
@@ -5894,6 +5921,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 078e3e8262b4c1b41bd45234e114c797,
     type: 3}
   m_PrefabInstance: {fileID: 1515552754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &1649321773 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 514396183299490215, guid: d506772033deda04fa7b001a7fdc0304,
+    type: 3}
+  m_PrefabInstance: {fileID: 130921540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1649321774 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2361988280275367277, guid: d506772033deda04fa7b001a7fdc0304,
+    type: 3}
+  m_PrefabInstance: {fileID: 130921540}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1653907791
 GameObject:
