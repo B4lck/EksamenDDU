@@ -112,14 +112,16 @@ public class PokemonController : MonoBehaviour
     public List<Attack> AllAttacks;
 
     // Renderer stuff
-    public MeshFilter RenderedMesh;
+    public MeshFilter meshFilter;
+    public MeshRenderer meshRenderer;
     private GameObject MeshObject;
 
     private void Awake()
     {
         if (pokemon == null) Destroy(gameObject);
-        MeshObject = RenderedMesh.gameObject;
-        RenderedMesh.mesh = pokemon.mesh;
+        MeshObject = meshFilter.gameObject;
+        meshFilter.mesh = pokemon.mesh;
+        meshRenderer.material = pokemon.Material;
 
         if (Attacks.Count == 0)
         {
@@ -229,7 +231,8 @@ public class PokemonController : MonoBehaviour
     {
         Debug.Log("Evolving");
         pokemon = pokemon.EvolveTo;
-        RenderedMesh.mesh = pokemon.mesh;
+        meshFilter.mesh = pokemon.mesh;
+        meshRenderer.material = pokemon.Material;
     }
 
     public void Hit(Attack attack,PokemonController pokemon)
