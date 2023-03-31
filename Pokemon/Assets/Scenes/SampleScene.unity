@@ -4500,7 +4500,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pokemon
       value: 
-      objectReference: {fileID: 11400000, guid: 5ed6c1859a9614945aff4359e0ba1ed9,
+      objectReference: {fileID: 11400000, guid: 1a1a4fa612d98f147b7514b92a71af2d,
         type: 2}
     - target: {fileID: 3965105503016794667, guid: d506772033deda04fa7b001a7fdc0304,
         type: 3}
