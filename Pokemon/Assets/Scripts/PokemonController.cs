@@ -190,6 +190,7 @@ public class PokemonController : MonoBehaviour
     public void TakeDamage(float Damage, Pokemon.PokemonType DamageType)
     {
         Health -= Mitigate(Damage, DamageType);
+        Health = Mathf.Floor(Health);
     }
     //Ai Stuff
     public void FindNewPosition(Vector3 newPos)

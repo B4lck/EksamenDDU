@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758b739ed1abc054584bbd106b2bcb9e, type: 3}
+  m_Name: Focuriba
+  m_EditorClassIdentifier: 
+  Name: Focuriba
+  Type: 0200000001000000
+  DoesEvovle: 1
+  EvolveTo: {fileID: 11400000, guid: ad205799e2843874ebe4700bbdcdb138, type: 2}
+  EvolveLevel: 0
+  img: {fileID: 2800000, guid: 13f8a0560f8c97d45b4cc485920b1ab3, type: 3}
+  mesh: {fileID: -3632888229392555716, guid: 4ecf014c6280f2b47ab6af0bc33309d3, type: 3}
