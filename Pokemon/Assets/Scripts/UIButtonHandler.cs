@@ -18,6 +18,8 @@ public class UIButtonHandler : MonoBehaviour
         GameObject InstPokeball = Instantiate(Pokeball);
         InstPokeball.transform.position = LeftHand.position + Offset;
         InstPokeball.GetComponent<Rigidbody>().isKinematic = true;
+
+        SoundManager.manager.Play("Pokeball Spawn");
     }
 
     public void SummonPokeballWithContent(int ButtonId)
@@ -27,6 +29,8 @@ public class UIButtonHandler : MonoBehaviour
         //Debug.Log(PokemonPageHandler.GetPokemonFromPageAndPlace(ButtonId).pokemon);
         InstPokeball.transform.position = LeftHand.position + Offset;
         InstPokeball.GetComponent<Rigidbody>().isKinematic = true;
+
+        SoundManager.manager.Play("Pokeball Spawn");
     }
 
     public void SwitchPage(string Name)

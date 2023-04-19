@@ -62,6 +62,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 8185892560239898896}
+  Partikel: {fileID: 8687565987226304579, guid: 350ed2c16122bf748badc963b001068e,
+    type: 3}
+  Contains: {fileID: 0}
 --- !u!54 &7611178331398238659
 Rigidbody:
   m_ObjectHideFlags: 0

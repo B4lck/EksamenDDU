@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Attack", menuName = "Pokemon")]
+[CreateAssetMenu(fileName = "New Pokemon", menuName = "Pokemon")]
 public class Pokemon : ScriptableObject
 {
     public enum PokemonType

@@ -128,28 +128,30 @@ public class PokemonController : MonoBehaviour
     [HideInInspector]public float CaptureIn;
     [HideInInspector]public bool CountDown;
 
-    private void Awake()
+    public void Initiate()
     {
         if (pokemon == null) Destroy(gameObject);
         MeshObject = meshFilter.gameObject;
         meshFilter.mesh = pokemon.mesh;
         meshRenderer.material = pokemon.Material;
 
-        if (Attacks.Count == 0)
-        {
-            // Tilføj attacks som matcher type
-            foreach (Attack attack in AllAttacks)
-            {
-                if (isType(attack.AttackType))
-                {
-                    Attacks.Add(attack);
-                }
-            }
-        }
-
         //Vælg et tilfældigt lvl når pokemonen spawner og giv liv baseret på lvl.
         MaxHealth = 5 + (Level * 0.2f * 20);
         Health = MaxHealth;
+
+        // Tilføj attacks som matcher type
+        foreach (Attack attack in AllAttacks)
+        {
+            if (isType(attack.AttackType))
+            {
+                Attacks.Add(attack);
+            }
+        }
+    }
+
+    private void Awake()
+    {
+        Initiate();
     }
 
     bool isType(Pokemon.PokemonType type)
@@ -226,14 +228,12 @@ public class PokemonController : MonoBehaviour
         UpdateUi();
 
         agent.isStopped = PositionLocked;
-        if (transform.position ==  new Vector3(TargetPosition.x, transform.position.y, TargetPosition.z) || agent.velocity == Vector3.zero)
+        if (transform.position == new Vector3(TargetPosition.x, transform.position.y, TargetPosition.z) || agent.velocity == Vector3.zero)
         {
             FindNewPosition(new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y, Random.Range(transform.position.z - 2, transform.position.z + 2)));
         }
         agent.SetDestination(TargetPosition);
-
-        if (CountDown) // Hvis den tæller ned til at blive fanget
-        {
+        if (CountDown) { 
             CaptureIn -= Time.deltaTime;
             if (CaptureIn < 0)
             {

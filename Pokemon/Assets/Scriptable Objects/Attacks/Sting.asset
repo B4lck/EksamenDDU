@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93740347eb43e1f47ad858334860a234, type: 3}
   m_Name: Sting
   m_EditorClassIdentifier: 
-  Name: 6
+  Name: Sting
   AttackType: 8
   Damage: 5
   Icon: {fileID: 2800000, guid: d01d7b99dc2b9cd44a14e7e8bfc96932, type: 3}

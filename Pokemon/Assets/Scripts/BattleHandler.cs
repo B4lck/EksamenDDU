@@ -30,7 +30,12 @@ public class BattleHandler : MonoBehaviour
         BattleUiHandler.PlayerPokemon = PlayerPokemon;
         BattleUiHandler.AiPokemon = InBattleWith;
 
-        IsPlayerTurn = true;
+        IsPlayerTurn = true; 
+
+        // Afspil lyd
+        SoundManager.manager.Stop("Main Theme");
+        SoundManager.manager.Stop("Pokemon Fanget");
+        SoundManager.manager.Play("Battle Musik");
         /*
         Placer pokemonsne over for hinanden, med spillerens pokemon ved sin side 
          */
@@ -41,12 +46,14 @@ public class BattleHandler : MonoBehaviour
         //Vælg angreb
         int RandomAttackId = (int)Random.Range(0, InBattleWith.Attacks.Count - 1);
         Attack attack = InBattleWith.Attacks[RandomAttackId];
-        Debug.Log("Ai used " + attack.name);
 
         //Slå spilleren
         InBattleWith.Hit(attack, PlayerPokemon);
+        BattleUiHandler.SetStatus(InBattleWith.pokemon.Name + " used " + attack.name);
         if (PlayerPokemon.Health <= 0f)
         {
+            InBattleWith.LevelUp();
+            Player.player.RemovePokemon(PlayerPokemon.gameObject);
             EndBattle();
         }
 
@@ -61,9 +68,9 @@ public class BattleHandler : MonoBehaviour
 
         BattleUiHandler.PlayerPokemon = null;
         BattleUiHandler.AiPokemon = null;
-        /*
-        Enable spillerens arm UI igen 
-         */
+
+        SoundManager.manager.Play("Main Theme");
+        SoundManager.manager.Stop("Battle Musik");
     }
 
     private float CountDown = 2f;
@@ -71,10 +78,8 @@ public class BattleHandler : MonoBehaviour
     {
         if (inBattle)
         {
-            Debug.Log("In battle");
             if (!IsPlayerTurn)
             {
-                Debug.Log("It is not players turn");
                 CountDown -= Time.deltaTime;
                 if (CountDown <= 0f)
                 {
