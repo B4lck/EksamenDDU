@@ -16,7 +16,7 @@ public class Pokeball : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             if (Contains == null)
             {
-                if (pokemon.Capture(transform))
+                if (pokemon.Capture(transform)) // Hvis den kan fanges
                 {
                     //Afspil lyd
                     SoundManager.manager.Play("Pokemon Fanget");
@@ -25,7 +25,6 @@ public class Pokeball : MonoBehaviour
                     Animator.SetTrigger("Capture");
                     transform.LookAt(collision.transform);
                     Instantiate(Partikel, pokemon.transform.position, Quaternion.identity, pokemon.transform);
-
 
                     //Gem pokemon
                     Player.player.AddPokemon(pokemon.gameObject);

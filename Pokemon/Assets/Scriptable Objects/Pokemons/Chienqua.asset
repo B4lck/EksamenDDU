@@ -18,8 +18,8 @@ MonoBehaviour:
   EvolveTo: {fileID: 11400000, guid: b880a35ff6f0a244087e875b2eac17cc, type: 2}
   EvolveLevel: 0
   img: {fileID: 2800000, guid: 76addaa8719b44f44a04cc51b9ec8495, type: 3}
-  mesh: {fileID: -1387407503233429609, guid: b234cd4d23c11f0408794c996762586b, type: 3}
-  Material: {fileID: 0}
+  mesh: {fileID: 2959467708922500008, guid: 363f70d817f74e64cb45b879351a13f4, type: 3}
+  Material: {fileID: 2100000, guid: cf3934095e49b884797a5c92b54ba6e4, type: 2}
   TypeImages:
   - {fileID: 2800000, guid: 49006f6eff54e3c489405e64868b71b7, type: 3}
   - {fileID: 2800000, guid: e038a7a7e944d344a9dceb46dc0fec8f, type: 3}

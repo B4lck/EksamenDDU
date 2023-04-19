@@ -149,7 +149,7 @@ public class PokemonController : MonoBehaviour
         }
     }
 
-    private void Awake()
+    public void Awake()
     {
         Initiate();
     }

@@ -16,10 +16,9 @@ public class PokemonSpawner : MonoBehaviour
         GameObject InstantiatedPokemonPrefab = Instantiate(PokemonPrefab, transform.position, Quaternion.identity, transform);
         AddPokemon(InstantiatedPokemonPrefab);
         PokemonController pokemonController = InstantiatedPokemonPrefab.GetComponent<PokemonController>();
-        pokemonController.pokemon = pokemon;
         pokemonController.Level = level;
-        pokemonController.meshFilter.mesh = pokemon.mesh;
-        pokemonController.meshRenderer.material = pokemon.Material;
+        pokemonController.pokemon = pokemon;
+        pokemonController.Initiate();
 
 
 
@@ -66,6 +65,16 @@ public class PokemonSpawner : MonoBehaviour
         RemoveAllDeadPokemons();
         TimeUntilNextSpawn -= Time.deltaTime;
         if (TimeUntilNextSpawn <= 0 && RoomForMore())
+        {
+            Pokemon RandomPokemon = pokemons[(int)Mathf.Floor(Random.Range(0f, pokemons.Count))];
+            SpawnPokemon(RandomPokemon, (int)Random.Range(1f, 4f) + 1);
+        }
+    }
+
+
+    private void Awake()
+    {
+        for (int i = 0; i < CurrentPokemons.Length; i++)
         {
             Pokemon RandomPokemon = pokemons[(int)Mathf.Floor(Random.Range(0f, pokemons.Count))];
             SpawnPokemon(RandomPokemon, (int)Random.Range(1f, 4f) + 1);
