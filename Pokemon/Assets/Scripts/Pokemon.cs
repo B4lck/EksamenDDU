@@ -36,4 +36,6 @@ public class Pokemon : ScriptableObject
     public Texture img;
     public Mesh mesh;
     public Material Material;
+
+    public Texture[] TypeImages;
 }
