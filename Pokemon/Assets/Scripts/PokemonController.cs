@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using TMPro;
 
 public class PokemonController : MonoBehaviour
 {
@@ -116,29 +118,40 @@ public class PokemonController : MonoBehaviour
     public MeshRenderer meshRenderer;
     private GameObject MeshObject;
 
-    private void Awake()
+    // Ui stuff
+    public GameObject Canvas;
+    public TextMeshProUGUI NavneText;
+    public TextMeshProUGUI LevelText;
+    public RawImage[] TypeImages;
+
+    // Capture stuff
+    [HideInInspector]public float CaptureIn;
+    [HideInInspector]public bool CountDown;
+
+    public void Initiate()
     {
         if (pokemon == null) Destroy(gameObject);
         MeshObject = meshFilter.gameObject;
         meshFilter.mesh = pokemon.mesh;
         meshRenderer.material = pokemon.Material;
 
-        if (Attacks.Count == 0)
-        {
-            // Tilføj attacks som matcher type
-            foreach (Attack attack in AllAttacks)
-            {
-                if (isType(attack.AttackType))
-                {
-                    Attacks.Add(attack);
-                }
-            }
-        }
-
         //Vælg et tilfældigt lvl når pokemonen spawner og giv liv baseret på lvl.
-        Level = (int)Random.Range(1f, 14f);
         MaxHealth = 5 + (Level * 0.2f * 20);
         Health = MaxHealth;
+
+        // Tilføj attacks som matcher type
+        foreach (Attack attack in AllAttacks)
+        {
+            if (isType(attack.AttackType))
+            {
+                Attacks.Add(attack);
+            }
+        }
+    }
+
+    private void Awake()
+    {
+        Initiate();
     }
 
     bool isType(Pokemon.PokemonType type)
@@ -193,7 +206,13 @@ public class PokemonController : MonoBehaviour
     {
         Health -= Mitigate(Damage, DamageType);
         Health = Mathf.Floor(Health);
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
+
     //Ai Stuff
     public void FindNewPosition(Vector3 newPos)
     {
@@ -206,24 +225,29 @@ public class PokemonController : MonoBehaviour
 
     private void Update()
     {
+        UpdateUi();
+
         agent.isStopped = PositionLocked;
-        if (transform.position ==  new Vector3(TargetPosition.x, transform.position.y, TargetPosition.z) || agent.velocity == Vector3.zero)
+        if (transform.position == new Vector3(TargetPosition.x, transform.position.y, TargetPosition.z) || agent.velocity == Vector3.zero)
         {
             FindNewPosition(new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y, Random.Range(transform.position.z - 2, transform.position.z + 2)));
         }
         agent.SetDestination(TargetPosition);
-
-        if (Input.anyKeyDown)
-        {
-            LevelUp();
+        if (CountDown) { 
+            CaptureIn -= Time.deltaTime;
+            if (CaptureIn < 0)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
     public void LevelUp()
     {
         Level++;
+        MaxHealth = 5 + (Level * 0.2f * 20);
+        Health = MaxHealth;
         if (!pokemon.DoesEvovle) return;
-        Debug.Log("Checking for evolve");
         if (Level >= pokemon.EvolveLevel) Evolve();
     }
 
@@ -240,5 +264,34 @@ public class PokemonController : MonoBehaviour
         // Gør skade afhængigt af pokemons level
         // Gør 10% ekstra skade pr level, dvs på level 10 gør så 100% ekstra skade osv.
         pokemon.TakeDamage(attack.Damage + (attack.Damage * (Level * 0.1f)), attack.AttackType);
+    }
+
+    void UpdateUi()
+    {
+        // Fiks canvas
+        Canvas.transform.LookAt(Player.player.Camera);
+        Canvas.transform.rotation = Canvas.transform.rotation * Quaternion.Euler(1, 180, 1);
+
+        // Opdater text
+        NavneText.text = pokemon.name;
+        LevelText.text = "lvl " + Level;
+
+        // Opdater billeder
+        for (int i = 0; i < TypeImages.Length; i++) // Reset
+        {
+            TypeImages[i].texture = null;
+            TypeImages[i].gameObject.SetActive(true);
+        }
+        for (int i = 0; i < pokemon.Type.Count; i++) // Sæt billede
+        {
+            TypeImages[i].texture = pokemon.TypeImages[i];
+        }
+        for (int i = 0; i < TypeImages.Length; i++) // Fjern billede hvis tom
+        {
+            if (TypeImages[i].texture == null)
+            {
+                TypeImages[i].gameObject.SetActive(false);
+            }
+        }
     }
 }

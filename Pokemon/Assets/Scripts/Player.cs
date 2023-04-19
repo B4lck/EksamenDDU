@@ -34,4 +34,6 @@ public class Player : MonoBehaviour
             Debug.Log("Player does not have pokemon");
     }
 
+    
+
 }

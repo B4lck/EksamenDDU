@@ -24,6 +24,8 @@ public class BattleUiHandler : MonoBehaviour
 
     public GameObject Panel;
 
+    public TextMeshProUGUI StatusText;
+
 
 
     private void Update()
@@ -82,12 +84,17 @@ public class BattleUiHandler : MonoBehaviour
         // Hvis det ikke er spillerens tur skal den ikke fortsætte
         if (!BattleHandler.battleHandler.IsPlayerTurn) return;
 
-        PlayerPokemon.Hit(Attacks[buttonId], AiPokemon);
+        Attack attack = Attacks[buttonId];
+        PlayerPokemon.Hit(attack, AiPokemon);
+        SetStatus(PlayerPokemon.pokemon.Name + " used " + attack.name);
         if (AiPokemon.Health <= 0)
         {
             BattleHandler.battleHandler.EndBattle();
+            PlayerPokemon.LevelUp();
             Destroy(AiPokemon.gameObject);
             //Opdater UI mht hvem vandt osv
+
+            SetStatus(PlayerPokemon.pokemon.name + " won! " + PlayerPokemon.pokemon.name + " is now level " + PlayerPokemon.Level);
         }
 
         BattleHandler.battleHandler.IsPlayerTurn = false;
@@ -96,5 +103,10 @@ public class BattleUiHandler : MonoBehaviour
     public void Flee()
     {
         BattleHandler.battleHandler.EndBattle();
+    }
+
+    public void SetStatus(string Status)
+    {
+        StatusText.text = Status;
     }
 }

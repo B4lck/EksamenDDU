@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pokeball : MonoBehaviour
 {
     public Animator Animator;
+    public GameObject Partikel;
     public PokemonController Contains;
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,16 +18,23 @@ public class Pokeball : MonoBehaviour
             {
                 if (pokemon.Capture(transform))
                 {
+                    //Afspil lyd
+                    SoundManager.manager.Play("Pokemon Fanget");
+
                     //Animer
                     Animator.SetTrigger("Capture");
                     transform.LookAt(collision.transform);
+                    Instantiate(Partikel, pokemon.transform.position, Quaternion.identity, pokemon.transform);
+
 
                     //Gem pokemon
                     Player.player.AddPokemon(pokemon.gameObject);
 
                     //Slet efter animationen
-                    //Destroy(pokemon.gameObject, pokemon.animator.GetCurrentAnimatorStateInfo(0).length);
-                    Destroy(gameObject, pokemon.animator.GetCurrentAnimatorStateInfo(0).length);
+                    float TidTilbage = pokemon.animator.GetCurrentAnimatorStateInfo(0).length;
+                    pokemon.CaptureIn = TidTilbage;
+                    pokemon.CountDown = true;
+                    Destroy(gameObject, TidTilbage);
                 }
             } else
             {

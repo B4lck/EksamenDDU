@@ -19,3 +19,6 @@ MonoBehaviour:
   EvolveLevel: 0
   img: {fileID: 2800000, guid: 594ae19e794726d47a128ea93e5bfcb9, type: 3}
   mesh: {fileID: -5053925668127403250, guid: f1cd559ebcfabbd41998d3d2a4520eb3, type: 3}
+  Material: {fileID: 0}
+  TypeImages:
+  - {fileID: 2800000, guid: e8e2b08ea1275154692343e49cc8d4f1, type: 3}
