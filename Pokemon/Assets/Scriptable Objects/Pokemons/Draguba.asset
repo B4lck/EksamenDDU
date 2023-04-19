@@ -20,4 +20,6 @@ MonoBehaviour:
   img: {fileID: 2800000, guid: 50157d3694f88ef4f920dbd44c587e2d, type: 3}
   mesh: {fileID: 3359138182758997695, guid: b1d97c96bbfbba948b31be83455ab792, type: 3}
   Material: {fileID: 0}
-  TypeImages: []
+  TypeImages:
+  - {fileID: 2800000, guid: 0e45f7f0c0954044aa6b9f66ca4765c9, type: 3}
+  - {fileID: 2800000, guid: d01d7b99dc2b9cd44a14e7e8bfc96932, type: 3}
