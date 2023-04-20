@@ -134,6 +134,8 @@ public class PokemonController : MonoBehaviour
         MeshObject = meshFilter.gameObject;
         meshFilter.mesh = pokemon.mesh;
         meshRenderer.material = pokemon.Material;
+                
+        meshFilter.gameObject.GetComponent<MeshCollider>().sharedMesh = pokemon.mesh;
 
         //Vælg et tilfældigt lvl når pokemonen spawner og giv liv baseret på lvl.
         MaxHealth = 5 + (Level * 0.2f * 20);

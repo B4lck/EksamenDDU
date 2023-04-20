@@ -9,9 +9,9 @@ public class Pokeball : MonoBehaviour
     public PokemonController Contains;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<PokemonController>())
+        if (collision.gameObject.GetComponent<PokemonTouchDetection>())
         {
-            PokemonController pokemon = collision.gameObject.GetComponent<PokemonController>();
+            PokemonController pokemon = collision.gameObject.GetComponent<PokemonTouchDetection>().pokemonController;
             pokemon.PositionLocked = true;
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             if (Contains == null)

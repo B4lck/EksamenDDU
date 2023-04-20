@@ -335,6 +335,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74483877}
   m_CullTransparentMesh: 1
+--- !u!4 &142707784 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+    type: 3}
+  m_PrefabInstance: {fileID: 411872290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &208251910
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +417,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208251910}
   m_CullTransparentMesh: 1
+--- !u!4 &231289439 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+    type: 3}
+  m_PrefabInstance: {fileID: 394411825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &243024145 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1942623229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &265669626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
@@ -853,6 +871,12 @@ Transform:
   - {fileID: 1087014403}
   - {fileID: 1484641392}
   - {fileID: 265669626}
+  - {fileID: 808886634}
+  - {fileID: 515982967}
+  - {fileID: 231289439}
+  - {fileID: 142707784}
+  - {fileID: 243024145}
+  - {fileID: 1944854254}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -873,7 +897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &382251407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1068,6 +1092,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390023753}
   m_CullTransparentMesh: 1
+--- !u!1001 &394411825
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 356740899}
+    m_Modifications:
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: cfabdd9be1d47734eb4cff1635c719ab,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ab2d5e59be151b4fae26d20599c8558,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f03fa4a9d7c21504d8f29b933c988222,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c6cb42e912bd66d49ba8fa1ef16594ce,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: cfabdd9be1d47734eb4cff1635c719ab,
+        type: 2}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -94.60272
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -114.4957
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106559, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pokemon Spawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: e14b3be5caed6f34195baba305e1e64c, type: 3}
 --- !u!1 &401705934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1271,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401705934}
   m_CullTransparentMesh: 1
+--- !u!1001 &411872290
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 356740899}
+    m_Modifications:
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ab2d5e59be151b4fae26d20599c8558,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: cfabdd9be1d47734eb4cff1635c719ab,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f03fa4a9d7c21504d8f29b933c988222,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 75fb4e68d8388a94a9ca3e96f8ee7e5c,
+        type: 2}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.833382
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -103.46885
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106559, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pokemon Spawner (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: e14b3be5caed6f34195baba305e1e64c, type: 3}
 --- !u!1 &451054508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1595,7 @@ PrefabInstance:
     - target: {fileID: 3127728407712097238, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_MoveSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3127728407712097240, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
@@ -1395,7 +1625,7 @@ PrefabInstance:
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.02
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
@@ -1479,6 +1709,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 456953236}
   m_SourcePrefab: {fileID: 100100000, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+--- !u!4 &515982967 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1343924969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &543627834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1850,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543627834}
   m_CullTransparentMesh: 1
+--- !u!1001 &555538544
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 356740899}
+    m_Modifications:
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 17ab931bc06f8114183b109c15371370,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: c6cb42e912bd66d49ba8fa1ef16594ce,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ad205799e2843874ebe4700bbdcdb138,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: b880a35ff6f0a244087e875b2eac17cc,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: CurrentPokemons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 159.83023
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -138.72629
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106559, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pokemon Spawner (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: e14b3be5caed6f34195baba305e1e64c, type: 3}
 --- !u!1 &614396705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,7 +2579,7 @@ PrefabInstance:
     - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 55
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
         type: 3}
@@ -2288,6 +2629,105 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e14b3be5caed6f34195baba305e1e64c, type: 3}
+--- !u!1001 &808886633
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 356740899}
+    m_Modifications:
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d7f3485815f01e546abe9380dcc7e957,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: c7a89e20892e79e49b9edb71aa32d16c,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: CurrentPokemons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -210.25224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 49.199375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106559, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pokemon Spawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: e14b3be5caed6f34195baba305e1e64c, type: 3}
+--- !u!4 &808886634 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+    type: 3}
+  m_PrefabInstance: {fileID: 808886633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &875956078
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,7 +2961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903942592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.740428, y: 1.801153, z: -8.191684}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2746,7 +3186,7 @@ PrefabInstance:
     - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
         type: 3}
@@ -3184,7 +3624,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081460648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.571526, y: -0.28620923, z: -3.9314675}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4383,6 +4823,100 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &1343924969
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 356740899}
+    m_Modifications:
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ab2d5e59be151b4fae26d20599c8558,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: cfabdd9be1d47734eb4cff1635c719ab,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f03fa4a9d7c21504d8f29b933c988222,
+        type: 2}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -86.89215
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -58.45276
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106559, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pokemon Spawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: e14b3be5caed6f34195baba305e1e64c, type: 3}
 --- !u!1 &1387493373
 GameObject:
   m_ObjectHideFlags: 0
@@ -4823,7 +5357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.614}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 848, y: 519}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1536317845
@@ -6382,6 +6916,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936302908}
   m_CullTransparentMesh: 1
+--- !u!1001 &1942623229
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 356740899}
+    m_Modifications:
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 17ab931bc06f8114183b109c15371370,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: c6cb42e912bd66d49ba8fa1ef16594ce,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ad205799e2843874ebe4700bbdcdb138,
+        type: 2}
+    - target: {fileID: 8746634643025106544, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: pokemons.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: b880a35ff6f0a244087e875b2eac17cc,
+        type: 2}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 170.32545
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -25.943987
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746634643025106559, guid: e14b3be5caed6f34195baba305e1e64c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pokemon Spawner (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: e14b3be5caed6f34195baba305e1e64c, type: 3}
+--- !u!4 &1944854254 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8746634643025106545, guid: e14b3be5caed6f34195baba305e1e64c,
+    type: 3}
+  m_PrefabInstance: {fileID: 555538544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1955793679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7126,7 +7766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2054286284
 RectTransform:
   m_ObjectHideFlags: 0

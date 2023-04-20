@@ -562,7 +562,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3965105503016794665}
-  - component: {fileID: 3965105503016794664}
   - component: {fileID: 3965105503016794667}
   - component: {fileID: 3965105503016794666}
   m_Layer: 0
@@ -587,22 +586,8 @@ Transform:
   - {fileID: 3965105502222948038}
   - {fileID: 278500343}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!136 &3965105503016794664
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3965105503016794677}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.85
-  m_Height: 4.99
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!114 &3965105503016794667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,6 +636,8 @@ MonoBehaviour:
   TypeImages:
   - {fileID: 1706649442}
   - {fileID: 2129795793}
+  CaptureIn: 0
+  CountDown: 0
 --- !u!195 &3965105503016794666
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -809,3 +796,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4369224250287430478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307565103749616824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95118c1371add24eab29a2fd1a27cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemonController: {fileID: 3965105503016794667}
+--- !u!64 &6063706442738078071
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307565103749616824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2739935881551499125, guid: d7f30e384d91c174681f9bb1c4a0b728, type: 3}

@@ -6,7 +6,7 @@ public class FaceRegister : MonoBehaviour
 {
     public string TargetTag;
     public Animator Animator;
-
+    /*
     private void Update()
     {
         RaycastHit hit;
@@ -25,5 +25,5 @@ public class FaceRegister : MonoBehaviour
             Animator.SetTrigger("CloseUI");
         }
     }
-
+    */
 }
