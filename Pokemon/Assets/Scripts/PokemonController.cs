@@ -169,15 +169,8 @@ public class PokemonController : MonoBehaviour
 
     public bool Capture(Transform pokeball)
     {
-        if (Random.Range(1, 3) != 123) // Skal laves om til 50/50
-        {
-            animator.SetTrigger("InCapture");
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        animator.SetTrigger("InCapture");
+        return true;
     }
 
     private bool Contains(List<Pokemon.PokemonType> types, Pokemon.PokemonType type)
