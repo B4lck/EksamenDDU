@@ -7,7 +7,7 @@ using TMPro;
 
 public class PokemonController : MonoBehaviour
 {
-    //Variabler for at gøre det nemmere at skrive
+    //Variabler for at gÃ¸re det nemmere at skrive
     static Pokemon.PokemonType Normal = Pokemon.PokemonType.Normal;
     static Pokemon.PokemonType Fire = Pokemon.PokemonType.Fire;
     static Pokemon.PokemonType Water = Pokemon.PokemonType.Water;
@@ -28,7 +28,7 @@ public class PokemonController : MonoBehaviour
     static Pokemon.PokemonType Fairy = Pokemon.PokemonType.Fairy;
 
 
-    //Dictionary for hvilke attacks der gør mindre skade
+    //Dictionary for hvilke attacks der gÃ¸r mindre skade
     static Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>> TypeWeaknesses = new Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>>()
     {
         {Normal, new List<Pokemon.PokemonType>() { Rock, Steel} },
@@ -51,7 +51,7 @@ public class PokemonController : MonoBehaviour
         {Fairy, new List<Pokemon.PokemonType>() { Fire, Poison, Steel} },
     };
 
-    //Dictionary for hvilke attacks der gør bonus skade
+    //Dictionary for hvilke attacks der gÃ¸r bonus skade
     static Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>> TypeAmplifier = new Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>>()
     {
         {Normal, new List<Pokemon.PokemonType>() { } },
@@ -74,7 +74,7 @@ public class PokemonController : MonoBehaviour
         {Fairy, new List<Pokemon.PokemonType>() { Fighting, Dragon, Dark} },
     };
 
-    // Dictionary for hvilke attacks der gør intet skade
+    // Dictionary for hvilke attacks der gÃ¸r intet skade
     static Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>> TypeZero = new Dictionary<Pokemon.PokemonType, List<Pokemon.PokemonType>>()
     {
         {Normal, new List<Pokemon.PokemonType>() { Ghost } },
@@ -130,18 +130,20 @@ public class PokemonController : MonoBehaviour
 
     public void Initiate()
     {
+        // Hvis den ikke har fÃ¥et en bestemt pokemon, sÃ¥ skal den slette sig selv
         if (pokemon == null) Destroy(gameObject);
+        
+        // Render ting
         MeshObject = meshFilter.gameObject;
         meshFilter.mesh = pokemon.mesh;
         meshRenderer.material = pokemon.Material;
-                
         meshFilter.gameObject.GetComponent<MeshCollider>().sharedMesh = pokemon.mesh;
 
-        //Vælg et tilfældigt lvl når pokemonen spawner og giv liv baseret på lvl.
+        // VÃ¦lg pokemonens liv udfra dens level.
         MaxHealth = 5 + (Level * 0.2f * 20);
         Health = MaxHealth;
 
-        // Tilføj attacks som matcher type
+        // TilfÃ¸j attacks som matcher type.
         foreach (Attack attack in AllAttacks)
         {
             if (isType(attack.AttackType))
@@ -263,8 +265,8 @@ public class PokemonController : MonoBehaviour
 
     public void Hit(Attack attack,PokemonController pokemon)
     {
-        // Gør skade afhængigt af pokemons level
-        // Gør 10% ekstra skade pr level, dvs på level 10 gør så 100% ekstra skade osv.
+        // GÃ¸r skade afhÃ¦ngigt af pokemons level
+        // GÃ¸r 10% ekstra skade pr level, dvs pÃ¥ level 10 gÃ¸r sÃ¥ 100% ekstra skade osv.
         pokemon.TakeDamage(attack.Damage + (attack.Damage * (Level * 0.1f)), attack.AttackType);
     }
 
@@ -284,7 +286,7 @@ public class PokemonController : MonoBehaviour
             TypeImages[i].texture = null;
             TypeImages[i].gameObject.SetActive(true);
         }
-        for (int i = 0; i < pokemon.Type.Count; i++) // Sæt billede
+        for (int i = 0; i < pokemon.Type.Count; i++) // SÃ¦t billede
         {
             TypeImages[i].texture = pokemon.TypeImages[i];
         }
